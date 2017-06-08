@@ -24,10 +24,8 @@ app.intent('JobIntent',
   {
     "slots":{"jobnumber":"AMAZON.NUMBER"}
 	,"utterances":[ 
-		"say the number {jobnumber}",
-		"give me the number {jobnumber}",
-		"tell me the number {jobnumber}",
-		"I want to hear you say the number {jobnumber}"]
+		"to get status for job {jobnumber}",
+		"status of job {jobnumber}"]
   },
   function(request,response) {
     var jobnumber = request.slot('jobnumber');
