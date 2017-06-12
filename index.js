@@ -28,7 +28,7 @@ app.intent('JobIntent',
 		"status of job {jobnumber}"]
   },
   function(request,response) {
-    var jobnumber = request.slot('jobnumber');
+    var jobnumber = request.slot('jobnumber'); 
     //response.say("You asked for the number " + jobnumber);
 
     if (_.isEmpty(jobnumber)) {
@@ -39,7 +39,7 @@ app.intent('JobIntent',
     	try{
 			var request = require('sync-request');
 			var res = request('GET', ENDPOINT + jobnumber ,{
-				timeout:3000
+				timeout:5000
 			});
 			
 			var s = JSON.parse(res.getBody());
@@ -54,6 +54,16 @@ app.intent('JobIntent',
 	}
     	
 
+  }
+);
+app.intent('AMAZON.HelpIntent',
+  { 
+	"utterances":[ 
+		"help",
+		"help me"]
+  },
+  function(request,response) {
+    response.say('You can ask to status of job by number of job.');
   }
 );
 
