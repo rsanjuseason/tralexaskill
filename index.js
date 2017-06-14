@@ -5,7 +5,7 @@ var alexa = require( 'alexa-app' );
 var app = new alexa.app( 'skill' );
 var _ = require('lodash');
 var request = require('sync-request');
-var ENDPOINT = 'https://trvin-developer-edition.ap5.force.com/services/apexrest/JobStatus?Name=';
+var ENDPOINT = process.env.ENDPOINT_URL;//'https://trvin-developer-edition.ap5.force.com/services/apexrest/JobStatus?Name=';
 
 
 app.launch( function( request, response ) {
